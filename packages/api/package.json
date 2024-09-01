@@ -1,0 +1,26 @@
+{
+  "name": "@example/api",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "bun run rm -rf dist *.tsbuildinfo",
+    "dev": "tsx watch src/index.ts",
+    "lint": "eslint .  --max-warnings 0",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@example/core": "workspace:^",
+    "@effect/platform": "^0.63.0",
+    "@effect/platform-node": "^0.58.0",
+    "effect": "3.7.0",
+    "effect-http": "0.78.0",
+    "effect-http-node": "0.18.0"
+  },
+  "devDependencies": {
+    "tsx": "4.19.0"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "@example/core",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "imports": {
+    "#service2": "./src/service2/index.ts"
+  },
+  "exports": {
+    "./service1": {
+      "types": "./dist/service1/index.d.ts",
+      "default": "./dist/service1/index.js"
+    },
+    "./service2": {
+      "types": "./dist/service2/index.d.ts",
+      "default": "./dist/service2/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "bun run rm -rf dist *.tsbuildinfo",
+    "dev": "tsc -w -p tsconfig.build.json",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@effect/experimental": "^0.24.0",
+    "@effect/opentelemetry": "^0.36.0",
+    "@effect/schema": "^0.72.0",
+    "@effect/sql": "^0.10.0",
+    "@effect/sql-drizzle": "^0.8.0",
+    "@effect/sql-pg": "^0.10.0",
+    "effect": "3.7.0"
+  },
+  "devDependencies": {
+    "tsx": "4.19.0"
+  }
+}
