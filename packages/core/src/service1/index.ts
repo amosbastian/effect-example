@@ -1,4 +1,3 @@
-import { Service2 } from "#service2";
 import { Context, Effect, Layer } from "effect";
 
 const make = Effect.gen(function* () {
@@ -21,5 +20,5 @@ export class Service1 extends Context.Tag("core/Service1")<
   Service1,
   Effect.Effect.Success<typeof make>
 >() {
-  static Live = Layer.effect(Service1, make).pipe(Layer.provide(Service2.Live));
+  static Live = Layer.effect(Service1, make);
 }
